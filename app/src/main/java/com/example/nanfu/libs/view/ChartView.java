@@ -20,4 +20,8 @@ public class ChartView extends View {
     public ChartView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
+
+    private void init() {
+
+    }
 }
