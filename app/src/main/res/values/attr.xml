@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="radius" format="float"></attr>
+    <attr name="textSize" format="dimension"></attr>
+    <attr name="strokeWidth" format="float"></attr>
+
+    <!--环形百分比控件-->
+    <declare-styleable name="CustomRateView">
+        <attr name="radius"/>
+        <attr name="textSize"/>
+        <attr name="strokeWidth"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomMeshView">
+
+    </declare-styleable>
+
+    <!-- 自定义导航栏-->
+    <attr name="item_count" format="integer"></attr>
+    <declare-styleable name="CustomIndicator">
+        <attr name="item_count"/>
+    </declare-styleable>
+
+    <!--自定义时间节点空间-->
+    <declare-styleable name="RangeSliderView">
+
+    </declare-styleable>
+</resources>
