@@ -7,7 +7,3 @@
 .DS_Store
 /build
 /captures
-libs/
-src/main/java-gen/
-
-src/main/res/drawable/
