@@ -15,8 +15,10 @@ import android.widget.TextView;
 
 import com.example.nanfu.libs.bean.MovieEntity;
 import com.example.nanfu.libs.fragment.VpSimpleFragment;
+import com.example.nanfu.libs.network.HttpResult;
 import com.example.nanfu.libs.network.IHttpResult;
 import com.example.nanfu.libs.network.MovieApi;
+import com.example.nanfu.libs.network.ProgressDialogSubscribe;
 import com.example.nanfu.libs.view.CustomIndicator;
 
 import java.util.ArrayList;
@@ -90,14 +92,12 @@ public class MainActivity extends FragmentActivity {
         indicator.setTabItemText(mDatas);
         ViewPager viewPager= (ViewPager) findViewById(R.id.vp);
 
-        for (String data : mDatas)
-        {
+        for (String data : mDatas) {
             VpSimpleFragment fragment = VpSimpleFragment.newInstance(data);
             mTabContents.add(fragment);
         }
         FragmentPagerAdapter mAdapter;
-        mAdapter = new FragmentPagerAdapter(getSupportFragmentManager())
-        {
+        mAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public int getCount()
             {
@@ -119,11 +119,11 @@ public class MainActivity extends FragmentActivity {
         MovieApi.getInstance().getMovie(new IHttpResult<MovieEntity>() {
             @Override
             public void onSuccess(MovieEntity movieEntity) {
-                Log.d("Tag",movieEntity.getTitle());
+//                Log.d("Tag",movieEntity.getTitle());
             }
 
             @Override
-            public void onDefealt(MovieEntity movieEntity) {
+            public void onFailure(MovieEntity movieEntity) {
 
             }
 
@@ -133,6 +133,23 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
+        MovieApi.getInstance().getMovie1(new ProgressDialogSubscribe<MovieEntity>(new IHttpResult<MovieEntity>() {
+
+            @Override
+            public void onSuccess(MovieEntity movieEntity) {
+                Log.d("Tag", movieEntity.getTitle());
+            }
+
+            @Override
+            public void onFailure(MovieEntity movieEntity) {
+
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+        }, this));
     }
 
 

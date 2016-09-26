@@ -1,6 +1,7 @@
 package com.example.nanfu.libs.network;
 
 import android.util.Log;
+import android.widget.Toast;
 
 import okhttp3.ResponseBody;
 import rx.Observable;
@@ -13,7 +14,7 @@ import rx.schedulers.Schedulers;
 /**
  * Created by Administrator on 2016/9/9.
  */
-public class BaseApi<T> {
+public class BaseApi<T extends HttpResult> {
 
     public BaseApi(){
         initData();
@@ -43,8 +44,13 @@ public class BaseApi<T> {
         });
     }
 
+    public void request1(Observable<T> obs, ProgressDialogSubscribe<T> subscribe) {
+        obs.observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe(subscribe);
+    }
+
     protected interface SpliceListener<T> {
         void onNext(T t);
         void onError();
     }
+
 }

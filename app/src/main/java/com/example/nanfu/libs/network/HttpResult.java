@@ -5,9 +5,9 @@ package com.example.nanfu.libs.network;
  */
 public class HttpResult<T> {
 
-    private int resultCode;
+    public int resultCode;
 
-    private String resultMessage;
+    public String resultMessage;
 
-    private T data;
+    public T data;
 }
