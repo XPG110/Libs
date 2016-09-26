@@ -38,7 +38,7 @@ public class ProgressDialogSubscribe<T extends HttpResult> extends Subscriber<T>
 
     @Override
     public void onError(Throwable e) {
-
+        iHttpResult.onCancel();
     }
 
     @Override
