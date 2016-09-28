@@ -3,6 +3,7 @@ package com.example.nanfu.libs;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.example.nanfu.libs.view.CircleMenuLayout;
 import com.example.nanfu.libs.view.CustomRateView;
@@ -17,6 +18,7 @@ import java.util.List;
  */
 public class TestActivity extends Activity {
 
+    private TextView textView;
     private CustomRateView mCustomRateView;
 
     private List<Float> persent= Arrays.asList(30f,50f,60f,80f,10f,70f);
