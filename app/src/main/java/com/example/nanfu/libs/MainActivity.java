@@ -46,6 +46,8 @@ public class MainActivity extends FragmentActivity {
     @BindView(R.id.result_TV)
     TextView result_TV;
     List<Fragment> mTabContents = new ArrayList<Fragment>();
+    @BindView(R.id.toLoadBtn)
+    Button toloadBtn;
 
     private List<String> mDatas = Arrays.asList("短信", "收藏", "推荐");
     @Override
@@ -85,6 +87,13 @@ public class MainActivity extends FragmentActivity {
             }
         });
         testIndicator();
+        toloadBtn= (Button) findViewById(R.id.toLoadBtn);
+        toloadBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mContext,LoadActivity.class));
+            }
+        });
     }
 
     private void testIndicator(){
@@ -151,6 +160,7 @@ public class MainActivity extends FragmentActivity {
             }
         }, this));
     }
+
 
 
 }

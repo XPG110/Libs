@@ -53,9 +53,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="toTestActivity"/>
+    <Button
+        android:id="@+id/toLoadBtn"
+        android:onClick="toTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="toLoad"/>
 
     <TextView
         android:id="@+id/result_TV"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 </LinearLayout>
